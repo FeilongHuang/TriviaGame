@@ -1,34 +1,61 @@
 $("#content2").hide();
+$("#content3").hide();
+//start game
 $("#start").on('click',startgame)
 
 function startgame(){
-    clearstart();
     timeleft();
     loadquestion();
 };
-function clearstart (){
-    $("#content1").html("");
-}
-var TimeoutId;
 var IntervalId;
 var count=90;
 function timeleft(){
-    IntervalId=setInterval(time,1000)
+    IntervalId=setInterval(timecount,1000)
 };
-function time(){
-        count--;
-        $("#timer").html("Time Rmaining: "+count+" Seconds");
+function timecount(){
+    count--;
+    $("#timer").html("Time Rmaining: "+count+" Seconds");
+    if(count===0){
+        getresult();
+        clearInterval(IntervalId);
     }
+}
 function loadquestion(){
+$("#content1").hide();
 $("#content2").show();
 }
-function getresult(){
-    TimeOutId=setTimeout(90*1000)
+var correctanswer=0;
+var incorrecanswer=0;
+var unansweredquestion=0;
+$("#correct").html("Correct Answer: "+correctanswer);
+$("#incorrect").html("Incorrect Answer: "+incorrecanswer);
+$("#unanswered").html("Unanswered: "+unansweredquestion);
 
-};
-$("#done").on('click',getresult)
- 
-//点击start跳转到开始，
-//开始马上就进行倒计时，倒计时结束时出结果
-//倒计时要用settimeout+功能，结束的功能就是得出结果并且跳转
-//
+$("#done").on('click',getresult);
+//get result
+function getresult(){
+    $("#content2").hide();
+    $("#content3").show();
+    clearInterval(IntervalId);
+var userchoice=[
+    $('input[name="radio_1"]:checked').val(),
+    $('input[name="radio_2"]:checked').val(),
+    $('input[name="radio_3"]:checked').val(),
+    $('input[name="radio_4"]:checked').val(),
+    $('input[name="radio_5"]:checked').val(),
+    ]
+for(var i=0;i<userchoice.length;i++){
+    if(userchoice[i]==="1"){
+        correctanswer++;
+        $("#correct").html("Correct Answer: "+correctanswer);
+    }
+    else if(userchoice[i]==="0"){
+        incorrecanswer++;
+        $("#incorrect").html("Incorrect Answer: "+incorrecanswer);
+    }
+    else{
+        unansweredquestion++;
+        $("#unanswered").html("Unanswered: "+unansweredquestion);
+    }
+}
+    };
