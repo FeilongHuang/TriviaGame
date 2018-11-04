@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriviaGame</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<!--写好CSS
+搞清楚要实现的逻辑:页面上有备选，选择对了判断，-->
+    <div id="container">
+        <header>Totally Trivial Trivia!</header>
+        <div class="content" id="content1">
+            <div id="start">Start</div>
+        </div>
+        <div class="content" id="content2">
+            <div id="timer"></div>
+            <div class="question">
+                <div id="q1">1.Who cameos in every Marvel movie?<br>
+                    <div class="options">
+                    <input type="radio" name="radio_1" value="0">Kevin Feige
+                    <input type="radio" name="radio_1" value="0">Jack Kirby
+                    <input type="radio" name="radio_1" value="0">Joss Whedon
+                    <input type="radio" name="radio_1" value="1">Stan Lee<br><br>
+                    </div>
+                </div>
+                <div id="q2">2.Which hero secretly has a family?<br>
+                    <div class="options">
+                    <input type="radio" name="radio_2" value="1">Hawkeye
+                    <input type="radio" name="radio_2" value="0">Black Widow
+                    <input type="radio" name="radio_2" value="0">Bruce Banner
+                    <input type="radio" name="radio_2" value="0">Tony Stark<br><br>
+                    </div>
+                </div>
+                <div id="q3">3.Who is the strongest Avenger, according to Stark's Quinjet?<br>
+                    <div class="options">
+                    <input type="radio" name="radio_3" value="0">Thor
+                    <input type="radio" name="radio_3" value="0">Iron Man
+                    <input type="radio" name="radio_3" value="1">Hulk
+                    <input type="radio" name="radio_3" value="0">Hawkeye<br><br>
+                    </div>
+                </div>
+                <div id="q4">4.How did Thor lose his eye?<br>
+                    <div class="options">
+                    <input type="radio" name="radio_4" value="0">Fighting Loki
+                    <input type="radio" name="radio_4" value="0">Fighting Thanos
+                    <input type="radio" name="radio_4" value="1">Fighting Hela
+                    <input type="radio" name="radio_4" value="0">Fighting Hulk<br><br>
+                    </div>
+                </div>
+                <div id="q5">5.What movie did Thanos first appear in?<br>
+                    <div class="options">
+                    <input type="radio" name="radio_5" value="1">Avengers
+                    <input type="radio" name="radio_5" value="0">Thor
+                    <input type="radio" name="radio_5" value="0">Thor:The Dark World
+                    <input type="radio" name="radio_5" value="0">Captain America:Civil War<br><br>
+                    </div>
+                </div>
+            </div>
+            <div id="done">Done</div>
+        </div>
+        <div class="content" id="content3">
+            <div id="result"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
